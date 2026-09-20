@@ -78,13 +78,13 @@ a { color: inherit; }
 .research-foot i { color: var(--orange); font-style: normal; padding: 0 8px; }
 
 .principle-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4%; margin-top: 5%; }
-.principle { min-height: 460px; padding: 3%; background: white; }
+.principle { height: 26.82cqw; min-height: 0; padding: 1.77cqw; background: white; }
 .principle--orange { background: var(--orange); color: white; }
 .principle--acid { background: var(--acid); }
 .principle > span { color: var(--orange); font-size: clamp(9px, .85vw, 14px); }
 .principle--orange > span, .principle--orange p { color: white; }
-.principle h3 { margin: 20% 0 0; font-size: clamp(23px, 2.3vw, 37px); line-height: 1.25; letter-spacing: -.035em; }
-.principle p { margin: 7% 0 0; color: #666660; font-size: clamp(13px, 1.25vw, 20px); line-height: 1.65; }
+.principle h3 { margin: 5.73cqw 0 0; font-size: clamp(23px, 2.3vw, 37px); line-height: 1.18; letter-spacing: -.035em; }
+.principle p { margin: 1.67cqw 0 0; color: #666660; font-size: clamp(13px, 1.25vw, 20px); line-height: 1.55; }
 .principle.principle--orange p { color: white; opacity: .9; }
 
 .journey { position: relative; display: grid; grid-template-columns: repeat(3,1fr); gap: 2%; margin-top: 7.5%; text-align: center; }
@@ -138,14 +138,10 @@ a { color: inherit; }
 .core-mods b { font-size: clamp(22px,2.2vw,35px); }
 .core-mods p { margin: 2px 0 0; font-size: clamp(9px,.8vw,13px); }
 
-.outcome-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 5%; margin-top: 4%; }
-.outcome-flow { display: flex; align-items: center; gap: 2.2%; margin-top: 2.3%; }
-.outcome-flow b { display: flex; align-items: center; gap: 18px; min-width: 150px; padding: 12px 14px; background: var(--orange); color: white; font-size: clamp(15px,1.45vw,23px); }
-.outcome-flow small { opacity: .75; font: 700 clamp(8px,.7vw,11px)/1 "Cousine", monospace; }
-.outcome-flow i { color: var(--orange); font-size: 25px; font-style: normal; }
-.outcome-grid > div:first-child > h3 { margin: 2.2% 0 0; font-size: clamp(18px,1.7vw,27px); line-height: 1.45; }
-.accent-line { width: 60px; height: 5px; margin-top: 2%; background: var(--acid); }
-.shipped { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5%; }
+.outcome-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 5%; margin-top: 4.6%; }
+.outcome-grid > div:first-child > h3 { max-width: 96%; margin: 0; font-size: clamp(18px,1.7vw,27px); line-height: 1.45; }
+.accent-line { width: 60px; height: 5px; margin-top: .8%; background: var(--acid); }
+.shipped { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4.1cqw; }
 .shipped span { padding: 8px 13px; border: 1px solid #8b8b85; border-radius: 999px; font-size: clamp(10px,.88vw,14px); }
 .reflection > article { padding: 3.2% 0; border-bottom: 1px solid #cecec8; }
 .reflection > article:first-child { border-top: 2px solid var(--ink); }
@@ -173,7 +169,9 @@ a { color: inherit; }
   .research-row { min-width: 820px; min-height: 70px; }
   .research-head { min-height: 44px; }
   .principle-grid, .evidence-grid { grid-template-columns: 1fr; }
-  .principle { min-height: 360px; }
+  .principle { height: auto; min-height: 360px; padding: 28px; }
+  .principle h3 { margin-top: 82px; }
+  .principle p { margin-top: 28px; }
   .journey { grid-template-columns: 1fr; gap: 52px; }
   .journey::before { display: none; }
   .journey-summary { margin-top: 64px; }
@@ -183,8 +181,6 @@ a { color: inherit; }
   .evidence-grid { gap: 34px; }
   .evidence-grid p { min-height: 0; }
   .core-mods { position: relative; inset: auto; grid-template-columns: 1fr; gap: 20px; margin-top: 46px; padding: 58px 22px 24px; }
-  .outcome-flow { flex-wrap: wrap; }
-  .outcome-flow i { transform: rotate(90deg); }
   .cover-copy { width: 100%; max-width: 100%; margin-top: 80px; }
   .cover-copy h1, .cover-copy > p, .slide-title, .feature-copy > h3, .feature-copy > p { max-width: 100%; overflow-wrap: anywhere; word-break: break-word; }
   .cover-copy > p { width: 100%; }
@@ -203,9 +199,6 @@ a { color: inherit; }
   .role span { font-size: 12px; }
   .problem-list article { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
   .recommend-grid { grid-template-columns: 1fr; }
-  .outcome-flow { display: grid; grid-template-columns: 1fr; }
-  .outcome-flow b { width: 100%; }
-  .outcome-flow i { justify-self: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
