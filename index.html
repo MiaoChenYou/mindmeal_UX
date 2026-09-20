@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MindMeal UX Case Study — 從記錄一餐，到決定下一餐。" />
+  <meta name="theme-color" content="#f4f4f0" />
+  <meta property="og:title" content="MindMeal — UX Case Study" />
+  <meta property="og:description" content="從記錄一餐，到決定下一餐：MindMeal UX 設計作品說明。" />
+  <meta property="og:image" content="assets/og.png" />
+  <title>MindMeal — UX Case Study</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff5408'/%3E%3Cpath d='M18 42V20h7l7 11 7-11h7v22h-7V31l-7 10-7-10v11z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#slide-1">跳至內容</a>
+
+  <header class="viewer-bar" aria-label="作品導覽">
+    <a class="viewer-brand" href="#slide-1" aria-label="回到首頁">MINDMEAL <span>/ UX</span></a>
+    <nav class="viewer-dots" aria-label="頁面索引">
+      <a href="#slide-1" aria-label="第 1 頁" data-dot="1">01</a>
+      <a href="#slide-2" aria-label="第 2 頁" data-dot="2">02</a>
+      <a href="#slide-3" aria-label="第 3 頁" data-dot="3">03</a>
+      <a href="#slide-4" aria-label="第 4 頁" data-dot="4">04</a>
+      <a href="#slide-5" aria-label="第 5 頁" data-dot="5">05</a>
+      <a href="#slide-6" aria-label="第 6 頁" data-dot="6">06</a>
+      <a href="#slide-7" aria-label="第 7 頁" data-dot="7">07</a>
+      <a href="#slide-8" aria-label="第 8 頁" data-dot="8">08</a>
+      <a href="#slide-9" aria-label="第 9 頁" data-dot="9">09</a>
+    </nav>
+    <span class="viewer-current"><b id="current-page">01</b> / 09</span>
+  </header>
+
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <main class="deck">
+    <section class="slide slide--cover" id="slide-1" data-slide="1" aria-labelledby="title-1">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / UX CASE STUDY</span>
+        <span class="section-tag">PORTFOLIO 2026</span>
+        <div class="cover-copy">
+          <h1 id="title-1">從記錄一餐，<br />到決定下一餐。</h1>
+          <p>一套以 AI 輔助、可修正估算與行動建議為核心的飲食記錄體驗。</p>
+          <div class="role"><b>UX DESIGN</b><span>Research · Flow · Interaction · Prototype</span></div>
+        </div>
+        <div class="cover-visual" aria-label="MindMeal 三個核心頁面">
+          <div class="orange-plane"></div>
+          <img class="phone phone--record" src="assets/phone-record.png" alt="MindMeal 快速紀錄頁" />
+          <img class="phone phone--home" src="assets/phone-home.png" alt="MindMeal 首頁" />
+          <img class="phone phone--next" src="assets/phone-next-meal.png" alt="MindMeal 下一餐推薦頁" />
+        </div>
+        <span class="page-no">№01/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-2" data-slide="2" aria-labelledby="title-2">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 02 CONTEXT</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-2">飲食紀錄的每一步，都是能否形成習慣的關鍵</h2>
+        <div class="context-grid">
+          <p class="context-quote">使用者不是不知道健康重要，<br /><br />而是很難持續維持飲控並保持紀錄習慣。</p>
+          <div class="problem-list">
+            <article><span>PROBLEM 01</span><strong>紀錄流程太長，容易中途放棄</strong></article>
+            <article><span>PROBLEM 02</span><strong>營養數值出現了，卻不知道怎麼判讀</strong></article>
+            <article><span>PROBLEM 03</span><strong>紀錄完成後，缺乏下一餐的行動方向</strong></article>
+          </div>
+        </div>
+        <div class="scope-line"><p>我負責競品整理、主要流程、資訊架構、互動狀態與高擬真原型調整。</p><b>MVP / MOBILE WEB APP</b></div>
+        <span class="page-no">№02/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-3" data-slide="3" aria-labelledby="title-3">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 03 RESEARCH</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-3">競品很完整，我們該如何找到突破點。</h2>
+        <div class="research-table" role="table" aria-label="競品研究">
+          <div class="research-row research-head" role="row"><div>競品</div><div>主要優勢</div><div>改善空間</div><div>MindMeal 學習方向</div></div>
+          <div class="research-row" role="row"><div><strong>FatSecret</strong></div><div>完整資料庫、條碼掃描</div><div>輸入仍可能造成負擔</div><div>常吃餐與快速修正</div></div>
+          <div class="research-row" role="row"><div><strong>Cofit</strong></div><div>在地資料、營養師服務</div><div>功能較多，新手需要理解</div><div>首頁只聚焦今日方向</div></div>
+          <div class="research-row" role="row"><div><strong>NutriSnap</strong></div><div>拍照、語音、多元輸入</div><div>AI 份量判讀仍有限</div><div>呈現估算並保留校正</div></div>
+          <div class="research-row" role="row"><div><strong>SlimGo</strong></div><div>無壓力語氣、每日任務</div><div>使用情境較集中</div><div>中性語言與健康導向</div></div>
+        </div>
+        <div class="research-foot"><p>11 份模擬原型問卷作為初步調整依據</p><strong>快速記錄 <i>→</i> 看懂資訊 <i>→</i> 選擇下一餐</strong></div>
+        <span class="page-no">№03/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-4" data-slide="4" aria-labelledby="title-4">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 04 STRATEGY</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-4">從縮短記錄到抉擇上的輔助。</h2>
+        <div class="principle-grid">
+          <article class="principle principle--orange"><span>01 / REDUCE</span><h3>把數值變圖像，<br />越簡單越容易完成。</h3><p>用視覺引導營養數值缺口；集中分類功能入口，避免展開、跳頁與重複確認。</p></article>
+          <article class="principle principle--acid"><span>02 / TRUST</span><h3>AI 估算，<br />使用者可微調。</h3><p>標示不確定性，並讓食材與營養結果可以修正。</p></article>
+          <article class="principle"><span>03 / ACT</span><h3>記錄之後，<br />輔助選擇下一餐。</h3><p>依數值推薦餐點與附近店家搜尋，減少選擇負擔。</p></article>
+        </div>
+        <span class="page-no">№04/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-5" data-slide="5" aria-labelledby="title-5">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 05 JOURNEY</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-5">三個動作，完成一次飲食決策。</h2>
+        <div class="journey">
+          <article><span>01 / RECORD</span><i>＋</i><h3>快速記錄</h3><p>拍照、相簿或搜尋，選擇最省力的輸入方式。</p></article>
+          <article><span>02 / CONFIRM</span><i>✓</i><h3>確認估算</h3><p>AI 先整理食材與營養，使用者只需確認或微調。</p></article>
+          <article><span>03 / DECIDE</span><i>→</i><h3>選下一餐</h3><p>依今日狀況取得餐點方向，再前往附近店家。</p></article>
+        </div>
+        <p class="journey-summary">省下輸入時間 <b>→</b> 降低理解成本 <b>→</b> 減少下一餐的選擇負擔</p>
+        <span class="page-no">№05/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-6" data-slide="6" aria-labelledby="title-6">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 06 KEY EXPERIENCE</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-6">AI 掃描結果必須能被修正。</h2>
+        <div class="feature-grid">
+          <div class="feature-copy">
+            <span class="eyebrow">RECORD &amp; ANALYZE</span>
+            <h3>降低輸入成本，同時保留使用者控制權。</h3>
+            <p>拍照最快，但影像辨識一定有誤差；因此流程不能只追求自動化，也必須讓使用者知道正在估算並能快速修正。</p>
+            <div class="decision-list">
+              <article><span>WHY</span><strong>輸入越複雜，越容易放棄記錄</strong></article>
+              <article><span>DESIGN</span><strong>多入口＋清楚進度＋可修正結果</strong></article>
+              <article><span>RESULT</span><strong>縮短記錄時間，不犧牲資料控制權</strong></article>
+            </div>
+          </div>
+          <img class="feature-phone" src="assets/phone-record.png" alt="快速紀錄手機畫面" />
+        </div>
+        <aside class="trust-note">設計重點：AI 不取代判斷，而是縮短使用者從「不知道怎麼記」到「可以確認」的距離。</aside>
+        <span class="page-no">№06/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-7" data-slide="7" aria-labelledby="title-7">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 07 KEY EXPERIENCE</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-7">推薦飲食，把營養資訊變成下一個選擇。</h2>
+        <div class="feature-grid feature-grid--recommend">
+          <div class="feature-copy">
+            <span class="eyebrow">NEXT MEAL DIRECTION</span>
+            <h3>使用者不必自己計算，直接知道下一餐怎麼選。</h3>
+            <p>系統讀取當日營養量、目標與飲食偏好，推薦多組可攝取的營養方向；每組包含點餐方式、飲食提醒與附近店家搜尋。</p>
+            <div class="recommend-grid">
+              <article><span>PROBLEM</span><strong>數字難以直接轉成飲食行動</strong></article>
+              <article class="highlight"><span>DECISION</span><strong>先告訴使用者下一餐需要補什麼</strong></article>
+              <article><span>DESIGN</span><strong>餐點＋點法＋提醒</strong></article>
+              <article><span>RESULT</span><strong>直接搜尋附近可取得的店家</strong></article>
+            </div>
+            <p class="action-flow">減少營養判讀 <b>→</b> 減少選餐壓力 <b>→</b> 更容易採取行動</p>
+          </div>
+          <img class="feature-phone" src="assets/phone-next-meal.png" alt="下一餐推薦手機畫面" />
+        </div>
+        <span class="page-no">№07/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-8" data-slide="8" aria-labelledby="title-8">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 08 ITERATION</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-8">參考問卷建議，優化與迭代</h2>
+        <div class="iteration-intro"><span>QUESTIONNAIRE-LED ITERATION</span><p>11 位測試者的操作結果，直接對應本次三個關鍵調整。</p></div>
+        <div class="evidence-grid">
+          <article><span>FINDING 01</span><b>4 / 11</b><h3>注意到且知道如何調整營養數值</h3><p>7／11 人沒有發現，或不知道如何操作分析結果的調整功能。</p><strong><i>本版調整</i> 強化 AI 估算提示與編輯入口</strong></article>
+          <article><span>FINDING 02</span><b>3.55 / 5</b><h3>開始操作的清楚程度</h3><p>只有 6／11 人能不透過協助一次完成紀錄。</p><strong><i>本版調整</i> 移除額外按鈕，縮短搜尋與記錄流程</strong></article>
+          <article><span>FINDING 03</span><b>7 / 11</b><h3>推薦店家對使用者的幫助</h3><p>第一版為附近能攝取到今日營養的推薦地圖，但餐點的選擇仍然對使用者造成負擔。</p><strong><i>本版調整</i> 用今日營養量產生下一餐方向及建議</strong></article>
+        </div>
+        <div class="core-mods"><span>CORE MODIFICATIONS</span><div><b>01</b><p>AI 估算可確認、可修正</p></div><div><b>02</b><p>搜尋與記錄流程減少步驟</p></div><div><b>03</b><p>推薦直接回應營養缺口</p></div></div>
+        <span class="page-no">№08/09</span>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-9" data-slide="9" aria-labelledby="title-9">
+      <div class="slide__canvas">
+        <span class="running">MINDMEAL / 09 OUTCOME</span><span class="section-tag">UX</span>
+        <h2 class="slide-title" id="title-9">這次專案，驗證了方向與下一步。</h2>
+        <div class="outcome-grid">
+          <div>
+            <span class="eyebrow">CORE EXPERIENCE</span>
+            <div class="outcome-flow"><b><small>01</small>記錄</b><i>→</i><b><small>02</small>理解</b><i>→</i><b><small>03</small>行動</b></div>
+            <h3>完成從餐點輸入、營養理解到下一餐決策的完整體驗。</h3>
+            <div class="accent-line"></div>
+            <div class="shipped"><span>登入與訪客流程</span><span>相機與相簿</span><span>AI 食物分析</span><span>手動修正</span><span>飲食紀錄</span><span>下一餐推薦</span><span>Maps 搜尋</span><span>權限與錯誤狀態</span></div>
+          </div>
+          <div class="reflection">
+            <article><span>LEARNED</span><h3>AI 體驗的核心是信任，不只是速度。</h3><p>顯示限制、提供校正與替代方案，才能讓估算真正可用。</p></article>
+            <article><span>NEXT</span><h3>進行真實使用者測試與資料驗證。</h3><p>下一階段將觀察記錄完成率、修正行為與推薦點擊率。</p></article>
+            <article><span>SCOPE</span><h3>目前仍是 MVP。</h3><p>帳號後端、正式飲食資料庫與個人化模型仍待建立。</p></article>
+          </div>
+        </div>
+        <span class="page-no">№09/09</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="viewer-controls" aria-label="切換頁面">
+    <button type="button" id="previous" aria-label="上一頁">←</button>
+    <button type="button" id="next" aria-label="下一頁">→</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
