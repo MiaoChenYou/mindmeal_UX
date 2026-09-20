@@ -5,6 +5,8 @@ const progressBar = document.querySelector("#progress-bar");
 const previousButton = document.querySelector("#previous");
 const nextButton = document.querySelector("#next");
 let activeIndex = 0;
+let wheelLocked = false;
+let touchStartY = 0;
 
 function setActive(index, updateHash = true) {
   activeIndex = Math.max(0, Math.min(index, slides.length - 1));
@@ -12,6 +14,11 @@ function setActive(index, updateHash = true) {
   currentPage.textContent = page;
   progressBar.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
   dots.forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === activeIndex));
+  slides.forEach((slide, slideIndex) => {
+    slide.classList.toggle("active", slideIndex === activeIndex);
+    slide.classList.toggle("before", slideIndex < activeIndex);
+    slide.setAttribute("aria-hidden", slideIndex === activeIndex ? "false" : "true");
+  });
   previousButton.disabled = activeIndex === 0;
   nextButton.disabled = activeIndex === slides.length - 1;
   if (updateHash) history.replaceState(null, "", `#slide-${activeIndex + 1}`);
@@ -19,18 +26,38 @@ function setActive(index, updateHash = true) {
 
 function goTo(index) {
   const safeIndex = Math.max(0, Math.min(index, slides.length - 1));
-  slides[safeIndex].scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  if (safeIndex !== activeIndex) setActive(safeIndex);
 }
 
-const observer = new IntersectionObserver(
-  entries => {
-    const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setActive(Number(visible.target.dataset.slide) - 1);
-  },
-  { threshold: [0.35, 0.55, 0.75] }
-);
+document.addEventListener("wheel", event => {
+  const activeSlide = slides[activeIndex];
+  const isMobileLayout = matchMedia("(max-width: 900px)").matches;
+  if (isMobileLayout && activeSlide.scrollHeight > activeSlide.clientHeight) {
+    const atTop = activeSlide.scrollTop <= 0;
+    const atBottom = activeSlide.scrollTop + activeSlide.clientHeight >= activeSlide.scrollHeight - 2;
+    if ((event.deltaY > 0 && !atBottom) || (event.deltaY < 0 && !atTop)) return;
+  }
+  event.preventDefault();
+  if (wheelLocked || Math.abs(event.deltaY) < 18) return;
+  wheelLocked = true;
+  goTo(activeIndex + (event.deltaY > 0 ? 1 : -1));
+  window.setTimeout(() => { wheelLocked = false; }, 650);
+}, { passive: false });
 
-slides.forEach(slide => observer.observe(slide));
+document.addEventListener("touchstart", event => {
+  touchStartY = event.changedTouches[0]?.clientY ?? 0;
+}, { passive: true });
+
+document.addEventListener("touchend", event => {
+  const endY = event.changedTouches[0]?.clientY ?? touchStartY;
+  const delta = touchStartY - endY;
+  const activeSlide = slides[activeIndex];
+  const atTop = activeSlide.scrollTop <= 0;
+  const atBottom = activeSlide.scrollTop + activeSlide.clientHeight >= activeSlide.scrollHeight - 2;
+  if (Math.abs(delta) < 55) return;
+  if (delta > 0 && atBottom) goTo(activeIndex + 1);
+  if (delta < 0 && atTop) goTo(activeIndex - 1);
+}, { passive: true });
 previousButton.addEventListener("click", () => goTo(activeIndex - 1));
 nextButton.addEventListener("click", () => goTo(activeIndex + 1));
 
@@ -50,7 +77,11 @@ document.addEventListener("keydown", event => {
 const hashPage = Number(location.hash.replace("#slide-", ""));
 if (hashPage >= 1 && hashPage <= slides.length) {
   setActive(hashPage - 1, false);
-  requestAnimationFrame(() => slides[hashPage - 1].scrollIntoView());
 } else {
   setActive(0, false);
 }
+
+window.addEventListener("hashchange", () => {
+  const page = Number(location.hash.replace("#slide-", ""));
+  if (page >= 1 && page <= slides.length) setActive(page - 1, false);
+});
