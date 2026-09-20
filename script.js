@@ -1,7 +1,4 @@
 const slides = [...document.querySelectorAll(".slide")];
-const dots = [...document.querySelectorAll("[data-dot]")];
-const currentPage = document.querySelector("#current-page");
-const progressBar = document.querySelector("#progress-bar");
 const previousButton = document.querySelector("#previous");
 const nextButton = document.querySelector("#next");
 let activeIndex = 0;
@@ -10,10 +7,6 @@ let touchStartY = 0;
 
 function setActive(index, updateHash = true) {
   activeIndex = Math.max(0, Math.min(index, slides.length - 1));
-  const page = String(activeIndex + 1).padStart(2, "0");
-  currentPage.textContent = page;
-  progressBar.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
-  dots.forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === activeIndex));
   slides.forEach((slide, slideIndex) => {
     slide.classList.toggle("active", slideIndex === activeIndex);
     slide.classList.toggle("before", slideIndex < activeIndex);
