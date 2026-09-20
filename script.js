@@ -5,6 +5,15 @@ let activeIndex = 0;
 let wheelLocked = false;
 let touchStartY = 0;
 
+function updateDeckScale() {
+  const isPortraitLayout = window.matchMedia("(max-width: 900px)").matches;
+  const scale = isPortraitLayout ? 1 : Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+  document.documentElement.style.setProperty("--deck-scale", String(scale));
+}
+
+updateDeckScale();
+window.addEventListener("resize", updateDeckScale, { passive: true });
+
 function setActive(index, updateHash = true) {
   activeIndex = Math.max(0, Math.min(index, slides.length - 1));
   slides.forEach((slide, slideIndex) => {
